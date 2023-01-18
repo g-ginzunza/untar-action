@@ -33,7 +33,7 @@ jobs:
         with:
           FILES: tailwind.config.js.zip
       - name: "Run if changes have been detected"
-        if: steps.git-diff.outputs.diff
+        if: env.GIT_DIFF && env.MATCHED_FILES
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           # Optional. Commit message for the created commit.
