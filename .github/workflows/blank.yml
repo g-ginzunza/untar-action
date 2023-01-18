@@ -46,7 +46,7 @@ jobs:
           # Optional. Local and remote branch name where commit is going to be pushed
           #  to. Defaults to the current branch.
           #  You might need to set `create_branch: true` if the branch does not exist.
-          branch: feature-124
+          # branch: feature-124
 
           # Optional. Options used by `git-commit`.
           # See https://git-scm.com/docs/git-commit#_options
@@ -98,4 +98,4 @@ jobs:
           disable_globbing: true
 
           # Optional. Create given branch name in local and remote repository.
-          create_branch: true
+          # create_branch: true
