@@ -57,7 +57,7 @@ jobs:
           # See the `pathspec`-documentation for git
           # - https://git-scm.com/docs/git-add#Documentation/git-add.txt-ltpathspecgt82308203
           # - https://git-scm.com/docs/gitglossary#Documentation/gitglossary.txt-aiddefpathspecapathspec
-          file_pattern: 'tailwind.config.js'
+          file_pattern: '.'
 
           # Optional. Local file path to the repository.
           # Defaults to the root of the repository.
@@ -74,11 +74,11 @@ jobs:
 
           # Optional. Option used by `git-status` to determine if the repository is 
           # dirty. See https://git-scm.com/docs/git-status#_options
-          status_options: '--untracked-files=no'
+          # status_options: '--untracked-files=no'
 
           # Optional. Options used by `git-add`.
           # See https://git-scm.com/docs/git-add#_options
-          add_options: '-u'
+          # add_options: '-u'
 
           # Optional. Options used by `git-push`.
           # See https://git-scm.com/docs/git-push#_options
