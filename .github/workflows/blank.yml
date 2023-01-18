@@ -32,6 +32,7 @@ jobs:
         id: git-diff
         with:
           FILES: directory.zip
+        run: echo ${{ env.GIT_DIFF_FILTERED }}
       - name: "Run if changes have been detected"
         if: env.GIT_DIFF && env.MATCHED_FILES
         uses: stefanzweifel/git-auto-commit-action@v4
