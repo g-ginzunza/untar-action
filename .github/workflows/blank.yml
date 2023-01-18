@@ -5,8 +5,8 @@ name: CI
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
-  push:
-    branches: [ "main" ]
+  # push:
+  #   branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
 
@@ -32,10 +32,10 @@ jobs:
         id: git-diff
         with:
           FILES: directory.zip
-      - name: Extract branch name
-        shell: bash
-        run: echo "##[set-output name=branch;]$(echo ${GITHUB_HEAD_REF#refs/heads/})"
-        id: extract_branch
+      # - name: Extract branch name
+      #   shell: bash
+      #   run: echo "##[set-output name=branch;]$(echo ${GITHUB_HEAD_REF#refs/heads/})"
+      #   id: extract_branch
       - name: "Run if changes have been detected"
         if: env.GIT_DIFF && env.MATCHED_FILES
         uses: stefanzweifel/git-auto-commit-action@v4
@@ -47,7 +47,7 @@ jobs:
           # Optional. Local and remote branch name where commit is going to be pushed
           #  to. Defaults to the current branch.
           #  You might need to set `create_branch: true` if the branch does not exist.
-          branch: ${{ format('refs/heads/{0}-{1}', steps.extract_branch.outputs.branch, 'with-contents') }}
+          # branch: ${{ format('refs/heads/{0}-{1}', steps.extract_branch.outputs.branch, 'with-contents') }}
 
           # Optional. Options used by `git-commit`.
           # See https://git-scm.com/docs/git-commit#_options
@@ -70,7 +70,7 @@ jobs:
           commit_author: Author <actions@github.com> # defaults to author of the commit that triggered the run
           
           # Optional. Disable dirty check and always try to create a commit and push
-          skip_dirty_check: true    
+          skip_dirty_check: false    
           
           # Optional. Skip internal call to `git fetch`
           skip_fetch: true    
