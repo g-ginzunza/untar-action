@@ -74,3 +74,6 @@ jobs:
 
           # Optional. Create given branch name in local and remote repository.
           # create_branch: true
+      - name: "Run if no changes have been detected"
+        if: steps.auto-commit-action.outputs.changes_detected == 'false'
+        run: echo "No Changes!"
