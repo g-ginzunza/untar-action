@@ -27,7 +27,7 @@ jobs:
 
       - uses: montudor/action-zip@v1
         with:
-          args: unzip -f tailwind.config.js.zip tailwind.config.js
+          args: unzip -f -qq tailwind.config.js.zip tailwind.config.js
       - uses: technote-space/get-diff-action@v6
         with:
           FILES: |
