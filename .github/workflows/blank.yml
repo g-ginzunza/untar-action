@@ -33,7 +33,7 @@ jobs:
         with:
           FILES: directory.zip
       - name: "Run if changes have been detected"
-        # if: env.GIT_DIFF && env.MATCHED_FILES
+        if: env.GIT_DIFF && env.MATCHED_FILES
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           # Optional. Commit message for the created commit.
