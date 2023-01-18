@@ -3,7 +3,8 @@ module.exports = {
   content: [],
   theme: {
     extend: {},
-    other_options: ""
+    other_options: "",
+    another_options: ""
   },
   plugins: [],
 }
