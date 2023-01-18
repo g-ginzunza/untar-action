@@ -31,7 +31,7 @@ jobs:
       - uses: technote-space/get-diff-action@v6
         with:
           FILES: |
-            tailwind.config.js
+            tailwind.config.js.zip
       - name: "Run if changes have been detected"
         if: env.GIT_DIFF
         uses: stefanzweifel/git-auto-commit-action@v4
