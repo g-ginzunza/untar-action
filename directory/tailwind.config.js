@@ -9,8 +9,7 @@ module.exports = {
     another_options3: "",
     another_options4: "",
     another_options5: "",
-    another_options6: "",
-    another_options7: "",
+    another_options6: ""
   },
   plugins: [],
 }
