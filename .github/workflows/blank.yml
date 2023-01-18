@@ -29,11 +29,12 @@ jobs:
         with:
           args: unzip -o -qq tailwind.config.js.zip tailwind.config.js
       - uses: technote-space/get-diff-action@v6
+        id: git-diff
         with:
           FILES: |
             tailwind.config.js.zip
       - name: "Run if changes have been detected"
-        if: env.GIT_DIFF
+        if: steps.git-diff.outputs.diff
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           # Optional. Commit message for the created commit.
