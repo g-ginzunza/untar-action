@@ -28,7 +28,9 @@ jobs:
       - uses: montudor/action-zip@v1
         with:
           args: unzip -f tailwind.config.js.zip tailwind.config.js
-      - uses: stefanzweifel/git-auto-commit-action@v4
+      - name: "Run if changes have been detected"
+        if: steps.auto-commit-action.outputs.changes_detected == 'true'
+        uses: stefanzweifel/git-auto-commit-action@v4
         with:
           # Optional. Commit message for the created commit.
           # Defaults to "Apply automatic changes"
