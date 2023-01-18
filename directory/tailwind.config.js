@@ -5,7 +5,8 @@ module.exports = {
     extend: {},
     other_options: "",
     another_options: "",
-    another_options2: ""
+    another_options2: "",
+    another_options3: ""
   },
   plugins: [],
 }
