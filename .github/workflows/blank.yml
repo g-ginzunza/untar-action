@@ -28,13 +28,13 @@ jobs:
       - uses: montudor/action-zip@v1
         with:
           args: unzip -o -qq tailwind.config.js.zip tailwind.config.js
-      # - uses: technote-space/get-diff-action@v6
-      #   with:
-      #     FILES: |
-      #       tailwind.config.js.zip
-      # - name: "Run if changes have been detected"
-      #   if: env.GIT_DIFF
-      - uses: stefanzweifel/git-auto-commit-action@v4
+      - uses: technote-space/get-diff-action@v6
+        with:
+          FILES: |
+            tailwind.config.js.zip
+      - name: "Run if changes have been detected"
+        if: env.GIT_DIFF
+        uses: stefanzweifel/git-auto-commit-action@v4
         with:
           # Optional. Commit message for the created commit.
           # Defaults to "Apply automatic changes"
