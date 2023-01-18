@@ -31,10 +31,7 @@ jobs:
       - uses: technote-space/get-diff-action@v6
         id: git-diff
         with:
-        PATTERNS: |
-            !.
-          FILES: |
-            tailwind.config.js.zip
+          FILES: tailwind.config.js.zip
       - name: "Run if changes have been detected"
         if: steps.git-diff.outputs.diff
         uses: stefanzweifel/git-auto-commit-action@v4
