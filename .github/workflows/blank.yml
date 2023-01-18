@@ -37,3 +37,9 @@ jobs:
       - uses: montudor/action-zip@v1
         with:
           args: unzip -qq tailwind.config.js.zip -d tailwind.config.js
+      - name: Commit and push
+      - uses: EndBug/add-and-commit@v7
+        with:
+          add: '["tailwind.config.js"]'
+          message: 'My commit message'
+          push: true
