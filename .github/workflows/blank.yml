@@ -25,15 +25,6 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
       - uses: montudor/action-zip@v1
         with:
           args: unzip -qq tailwind.config.js.zip -d tailwind.config.js
@@ -67,22 +58,6 @@ jobs:
           commit_user_name: My GitHub Actions Bot # defaults to "github-actions[bot]"
           commit_user_email: my-github-actions-bot@example.org # defaults to "41898282+github-actions[bot]@users.noreply.github.com"
           commit_author: Author <actions@github.com> # defaults to author of the commit that triggered the run
-
-          # Optional. Tag name being created in the local repository and 
-          # pushed to remote repository and defined branch.
-          # tagging_message: 'v1.0.0'
-
-          # Optional. Option used by `git-status` to determine if the repository is 
-          # dirty. See https://git-scm.com/docs/git-status#_options
-          # status_options: '--untracked-files=no'
-
-          # Optional. Options used by `git-add`.
-          # See https://git-scm.com/docs/git-add#_options
-          # add_options: '-u'
-
-          # Optional. Options used by `git-push`.
-          # See https://git-scm.com/docs/git-push#_options
-          # push_options: '--force'
           
           # Optional. Disable dirty check and always try to create a commit and push
           skip_dirty_check: true    
