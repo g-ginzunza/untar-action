@@ -6,13 +6,13 @@ end
 
 class Postgres
   def to_date
-    "SELECT TO_DATE ('20180314121212','yyyymmddhh24miss') FROM dual"
+    "SELECT TO_TIMESTAMP ('20180314121212','yyyymmddhh24miss')::TIMESTAMP(0)"
   end
 end
 
 class Oracle
   def to_date
-    "SELECT TO_TIMESTAMP ('20180314121212','yyyymmddhh24miss')::TIMESTAMP(0)"
+    "SELECT TO_DATE ('20180314121212','yyyymmddhh24miss') FROM dual"
   end
 end
 
